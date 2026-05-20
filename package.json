@@ -1,6 +1,6 @@
 {
   "name": "@rqdhw3n/react-phone-input",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "International phone input with country selector and validation",
   "type": "module",
   "license": "MIT",
@@ -57,6 +57,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rqdhw3n/react-phone-input.git"
+    "url": "https://github.com/Rqdhw3ns/react-phone-input"
   }
 }

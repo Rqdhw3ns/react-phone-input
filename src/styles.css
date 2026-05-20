@@ -1,0 +1,271 @@
+/* ─── Light theme (default) ─── */
+.rpi-root {
+  --rpi-bg: #ffffff;
+  --rpi-bg-muted: #f3f4f6;
+  --rpi-text: #111827;
+  --rpi-text-muted: #6b7280;
+  --rpi-border: #d1d5db;
+  --rpi-border-focus: #0294f6;
+  --rpi-error: #dc2626;
+  --rpi-selected: #4f46e5;
+  --rpi-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --rpi-focus-ring: 0 0 0 2px rgba(2, 148, 246, 0.35);
+  --rpi-error-ring: 0 0 0 1px rgba(239, 68, 68, 0.35);
+
+  position: relative;
+  width: 100%;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: var(--rpi-text);
+  text-align: left;
+}
+
+/* ─── Dark theme: OS preference (auto) ─── */
+@media (prefers-color-scheme: dark) {
+  .rpi-root:not(.rpi-light) {
+    --rpi-bg: #1f2937;
+    --rpi-bg-muted: #374151;
+    --rpi-text: #f9fafb;
+    --rpi-text-muted: #9ca3af;
+    --rpi-border: #4b5563;
+    --rpi-border-focus: #38bdf8;
+    --rpi-error: #f87171;
+    --rpi-selected: #818cf8;
+    --rpi-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.45);
+    --rpi-focus-ring: 0 0 0 2px rgba(56, 189, 248, 0.35);
+    --rpi-error-ring: 0 0 0 1px rgba(248, 113, 113, 0.35);
+  }
+}
+
+/* ─── Forced dark ─── */
+.rpi-root.rpi-dark {
+  --rpi-bg: #1f2937;
+  --rpi-bg-muted: #374151;
+  --rpi-text: #f9fafb;
+  --rpi-text-muted: #9ca3af;
+  --rpi-border: #4b5563;
+  --rpi-border-focus: #38bdf8;
+  --rpi-error: #f87171;
+  --rpi-selected: #818cf8;
+  --rpi-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.45);
+  --rpi-focus-ring: 0 0 0 2px rgba(56, 189, 248, 0.35);
+  --rpi-error-ring: 0 0 0 1px rgba(248, 113, 113, 0.35);
+}
+
+/* ─── Forced light (overrides OS dark) ─── */
+.rpi-root.rpi-light {
+  --rpi-bg: #ffffff;
+  --rpi-bg-muted: #f3f4f6;
+  --rpi-text: #111827;
+  --rpi-text-muted: #6b7280;
+  --rpi-border: #d1d5db;
+  --rpi-border-focus: #0294f6;
+  --rpi-error: #dc2626;
+  --rpi-selected: #4f46e5;
+  --rpi-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --rpi-focus-ring: 0 0 0 2px rgba(2, 148, 246, 0.35);
+  --rpi-error-ring: 0 0 0 1px rgba(239, 68, 68, 0.35);
+}
+
+.rpi-field {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--rpi-border);
+  background: var(--rpi-bg);
+}
+
+.rpi-field:focus-within {
+  outline: none;
+  box-shadow: var(--rpi-focus-ring);
+  border-color: var(--rpi-border-focus);
+}
+
+.rpi-field--error {
+  border-color: var(--rpi-error);
+}
+
+.rpi-field--error:focus-within {
+  box-shadow: var(--rpi-error-ring);
+}
+
+.rpi-field--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rpi-country-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-right: 1px solid var(--rpi-border);
+  background: var(--rpi-bg);
+  color: var(--rpi-text);
+  cursor: pointer;
+  flex-shrink: 0;
+  font: inherit;
+}
+
+.rpi-country-trigger:disabled {
+  cursor: not-allowed;
+}
+
+.rpi-flag {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rpi-country-code {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--rpi-text);
+}
+
+.rpi-chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--rpi-text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.rpi-chevron--open {
+  transform: rotate(180deg);
+}
+
+.rpi-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  background: var(--rpi-bg);
+  color: var(--rpi-text);
+}
+
+.rpi-input::placeholder {
+  color: var(--rpi-text-muted);
+}
+
+.rpi-input:disabled {
+  cursor: not-allowed;
+}
+
+.rpi-error-wrap {
+  width: 100%;
+  margin: 4px 0 0;
+  text-align: left;
+}
+
+.rpi-error {
+  margin: 0;
+  width: 100%;
+  font-size: 13px;
+  color: var(--rpi-error);
+  text-align: left;
+}
+
+.rpi-error--center {
+  text-align: center;
+}
+
+.rpi-error--right {
+  text-align: right;
+}
+
+.rpi-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  border-radius: 6px;
+  background: var(--rpi-bg);
+  color: var(--rpi-text);
+  border: 1px solid var(--rpi-border);
+  box-shadow: var(--rpi-shadow);
+}
+
+.rpi-search-wrap {
+  padding: 8px;
+  border-bottom: 1px solid var(--rpi-border);
+}
+
+.rpi-search {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid var(--rpi-border);
+  border-radius: 4px;
+  outline: none;
+  background: var(--rpi-bg);
+  color: var(--rpi-text);
+}
+
+.rpi-search::placeholder {
+  color: var(--rpi-text-muted);
+}
+
+.rpi-search:focus {
+  box-shadow: var(--rpi-focus-ring);
+  border-color: var(--rpi-border-focus);
+}
+
+.rpi-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.rpi-country-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: var(--rpi-text);
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.rpi-country-option:hover {
+  background: var(--rpi-bg-muted);
+}
+
+.rpi-country-option--selected {
+  font-weight: 600;
+  color: var(--rpi-selected);
+}
+
+.rpi-country-label {
+  flex: 1;
+  min-width: 0;
+  text-transform: capitalize;
+  color: inherit;
+}
+
+.rpi-dial-code {
+  flex-shrink: 0;
+  color: var(--rpi-text-muted);
+}
+
+.rpi-empty {
+  padding: 8px 16px;
+  color: var(--rpi-text-muted);
+}

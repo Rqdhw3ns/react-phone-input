@@ -310,9 +310,3 @@ npm install
 npm run build
 npm test
 ```
-
-## Publish
-
-```bash
-npm publish --access public --otp=YOUR_CODE
-```
